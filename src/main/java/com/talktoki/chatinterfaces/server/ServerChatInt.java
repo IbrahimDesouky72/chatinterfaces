@@ -1,6 +1,6 @@
 package com.talktoki.chatinterfaces.server;
 
-import commans.Message;
+import com.talktoki.chatinterfaces.commans.Message;
 
 /**
  *

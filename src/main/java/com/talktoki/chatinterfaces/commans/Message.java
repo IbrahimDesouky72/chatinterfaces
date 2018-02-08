@@ -1,4 +1,4 @@
-package commans;
+package com.talktoki.chatinterfaces.commans;
 
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
