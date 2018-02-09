@@ -2,6 +2,7 @@
 package com.talktoki.chatinterfaces.client;
 
 import com.talktoki.chatinterfaces.commans.Message;
+import com.talktoki.chatinterfaces.commans.User;
 
 /**
  *
@@ -15,4 +16,6 @@ public interface ClientChatInt {
     // for group chatting
 //  public boolean receiveInGroup(List of users, String sender_email, Message message);
     public boolean receiveInGroup(String group_id, String sender_email, Message message);
+    
+    public User getUser();
 }
