@@ -41,4 +41,12 @@ public interface ClientInterface {
      * @return user model
      */
     public User getUser();
+
+    /**
+     * receives friendship request notification
+     * @param sender_name to show name of the sender ( first and last names )
+     * @param sender_email to uniquely identify user
+     */
+    public void receiveFriendshipRequest(String sender_name, String sender_email);
+
 }

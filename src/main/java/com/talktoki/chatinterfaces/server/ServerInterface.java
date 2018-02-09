@@ -96,4 +96,28 @@ public interface ServerInterface {
      */
     public HashMap<String, Integer> getContactList(String email);
 
+    /**
+     * asks to add a client as friend this function checks if the receiver
+     * already exists and then if exists then if he/she is offline send an
+     * immediate request else the request is saved into database to check send
+     * it later when user logs in
+     *
+     * @param sender
+     * @param receiver
+     * @return (0) User doesn't exist <br> (1) Successfully sent friend request
+     * </b> (2) Database exception
+     */
+    public int sendFriendshipRequest(String sender, String receiver);
+
+    /**
+     * the receiver replies with acceptance or refusal
+     *
+     * @param recevier the client who received friend request
+     * @param sender the client who send friend request
+     * @param accepted
+     * @return true if notified the sender with the response and false to
+     * indicated refusal
+     */
+    public boolean friendshipRequestResponse(String recevier, String sender, boolean accepted);
+
 }
