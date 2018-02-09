@@ -1,8 +1,7 @@
 package com.talktoki.chatinterfaces.server;
 
-import com.talktoki.chatinterfaces.client.ClientChatInt;
-import com.talktoki.chatinterfaces.commans.Message;
-import com.talktoki.chatinterfaces.commans.User;
+import com.talktoki.chatinterfaces.client.*;
+import com.talktoki.chatinterfaces.commans.*;
 import java.util.HashMap;
 
 /**
@@ -11,14 +10,24 @@ import java.util.HashMap;
  */
 public interface ServerInterface {
 
-    /* <------- Authentication methods -------> */
+    /* <------- Authentication and connection methods -------> */
     /**
+     * check user against databse
+     *
      * @param email
      * @param password
      * @return user data object from database if user exists or null if user
      * doesn't exist
      */
     public User signIn(String email, String password);
+
+    /**
+     * Adds the client to currently online served clients
+     *
+     * @param client
+     * @return
+     */
+    public Boolean addClient(ClientInterface client);
 
     /**
      * Add user into database
@@ -30,14 +39,17 @@ public interface ServerInterface {
     public int signUp(User user);
 
     /**
+     * change user status in database to offline and remove client from served
+     * clients by the server.
      *
      * @param myclient
      * @return true if successfully signed user out or false if an error occured
      */
-    public boolean signOut(ClientChatInt myclient);
+    public boolean signOut(ClientInterface myclient);
 
     /* <------- Message methods -------> */
     /**
+     * Send a message to a specific user
      *
      * @param sender_email
      * @param receiver_email
@@ -47,7 +59,18 @@ public interface ServerInterface {
     public boolean sendToOne(String sender_email, String receiver_email, Message message);
 
     /**
+     * Creates a group so that the server knows to whom it should send the
+     * sendToGroup message
+     *
+     * @param group_id
+     * @param group_members array of emails of group members
+     * @return
+     */
+    public int createGroup(String group_id, String[] group_members);
+
+    /**
      * Send message in a group chat
+     *
      * @param sender_email
      * @param message
      * @param group_id
@@ -57,6 +80,7 @@ public interface ServerInterface {
 
     /* <------- Other utilities methods -------> */
     /**
+     * Notify the server that a user state has changed
      *
      * @param email
      * @param status
