@@ -31,7 +31,7 @@ public interface ServerInterface extends Remote{
      * @return
      * @throws java.rmi.RemoteException
      */
-    public Boolean addClient(ClientInterface client) throws RemoteException;
+    public void addClient(ClientInterface client) throws RemoteException;
 
     /**
      * Add user into database
