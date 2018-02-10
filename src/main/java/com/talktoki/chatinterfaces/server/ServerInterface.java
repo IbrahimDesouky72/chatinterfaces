@@ -2,13 +2,15 @@ package com.talktoki.chatinterfaces.server;
 
 import com.talktoki.chatinterfaces.client.*;
 import com.talktoki.chatinterfaces.commans.*;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.HashMap;
 
 /**
  *
  * @author mahrous
  */
-public interface ServerInterface {
+public interface ServerInterface extends Remote{
 
     /* <------- Authentication and connection methods -------> */
     /**
@@ -18,16 +20,18 @@ public interface ServerInterface {
      * @param password
      * @return user data object from database if user exists or null if user
      * doesn't exist
+     * @throws java.rmi.RemoteException
      */
-    public User signIn(String email, String password);
+    public User signIn(String email, String password) throws RemoteException;
 
     /**
      * Adds the client to currently online served clients
      *
      * @param client
      * @return
+     * @throws java.rmi.RemoteException
      */
-    public Boolean addClient(ClientInterface client);
+    public Boolean addClient(ClientInterface client) throws RemoteException;
 
     /**
      * Add user into database
@@ -35,8 +39,9 @@ public interface ServerInterface {
      * @param user
      * @return (1) Successfully added code <br> (2) Email already exists code
      * </b> (3) Database exception
+     * @throws java.rmi.RemoteException
      */
-    public int signUp(User user);
+    public int signUp(User user) throws RemoteException;
 
     /**
      * change user status in database to offline and remove client from served
@@ -44,8 +49,9 @@ public interface ServerInterface {
      *
      * @param myclient
      * @return true if successfully signed user out or false if an error occured
+     * @throws java.rmi.RemoteException
      */
-    public boolean signOut(ClientInterface myclient);
+    public boolean signOut(ClientInterface myclient) throws RemoteException;
 
     /* <------- Message methods -------> */
     /**
@@ -55,8 +61,9 @@ public interface ServerInterface {
      * @param receiver_email
      * @param message
      * @return true if successfully sent and false if error occured
+     * @throws java.rmi.RemoteException
      */
-    public boolean sendToOne(String sender_email, String receiver_email, Message message);
+    public boolean sendToOne(String sender_email, String receiver_email, Message message) throws RemoteException;
 
     /**
      * Creates a group so that the server knows to whom it should send the
@@ -65,8 +72,9 @@ public interface ServerInterface {
      * @param group_id
      * @param group_members array of emails of group members
      * @return
+     * @throws java.rmi.RemoteException
      */
-    public int createGroup(String group_id, String[] group_members);
+    public int createGroup(String group_id, String[] group_members) throws RemoteException;
 
     /**
      * Send message in a group chat
@@ -75,8 +83,9 @@ public interface ServerInterface {
      * @param message
      * @param group_id
      * @return true if successfully sent and false if not
+     * @throws java.rmi.RemoteException
      */
-    public boolean sendToGroup(String sender_email, Message message, String group_id);
+    public boolean sendToGroup(String sender_email, Message message, String group_id) throws RemoteException;
 
     /* <------- Other utilities methods -------> */
     /**
@@ -85,16 +94,18 @@ public interface ServerInterface {
      * @param email
      * @param status
      * @return (1) Online <br> (2) Away </b> (3) Busy
+     * @throws java.rmi.RemoteException
      */
-    public boolean notifyStatus(String email, int status);
+    public boolean notifyStatus(String email, int status) throws RemoteException;
 
     /**
      * get contact list for any user
      *
      * @param email
      * @return hash map representing contact list as [email, status] pairs
+     * @throws java.rmi.RemoteException
      */
-    public HashMap<String, Integer> getContactList(String email);
+    public HashMap<String, Integer> getContactList(String email) throws RemoteException;
 
     /**
      * asks to add a client as friend this function checks if the receiver
@@ -106,8 +117,9 @@ public interface ServerInterface {
      * @param receiver
      * @return (0) User doesn't exist <br> (1) Successfully sent friend request
      * </b> (2) Database exception
+     * @throws java.rmi.RemoteException
      */
-    public int sendFriendshipRequest(String sender, String receiver);
+    public int sendFriendshipRequest(String sender, String receiver) throws RemoteException;
 
     /**
      * the receiver replies with acceptance or refusal
@@ -117,7 +129,8 @@ public interface ServerInterface {
      * @param accepted
      * @return true if notified the sender with the response and false to
      * indicated refusal
+     * @throws java.rmi.RemoteException
      */
-    public boolean friendshipRequestResponse(String recevier, String sender, boolean accepted);
+    public boolean friendshipRequestResponse(String recevier, String sender, boolean accepted) throws RemoteException;
 
 }

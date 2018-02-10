@@ -2,12 +2,14 @@ package com.talktoki.chatinterfaces.client;
 
 import com.talktoki.chatinterfaces.commans.Message;
 import com.talktoki.chatinterfaces.commans.User;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 
 /**
  *
  * @author mahrous
  */
-public interface ClientInterface {
+public interface ClientInterface extends Remote{
 
     /**
      * Receive a message from a specific friend
@@ -16,9 +18,9 @@ public interface ClientInterface {
      * @param message
      * @return true to acknowledge to the server that client received the
      * message or false otherwise
+     * @throws java.rmi.RemoteException
      */
-    public boolean receiveFromOne(String sender_email, Message message);
-
+    public boolean receiveFromOne(String sender_email, Message message) throws RemoteException; 
     /**
      * Receive a message in a specific group chat
      *
@@ -26,27 +28,31 @@ public interface ClientInterface {
      * @param sender_email
      * @param message
      * @return
+     * @throws java.rmi.RemoteException
      */
-    public boolean receiveInGroup(String group_id, String sender_email, Message message);
+    public boolean receiveInGroup(String group_id, String sender_email, Message message) throws RemoteException;
 
     /**
      * The server calls this message if it's stopped or crashed to let client
      * exit
+     * @throws java.rmi.RemoteException
      */
-    public void terminate();
+    public void terminate() throws RemoteException;
 
     /**
      * Gets user model
      *
      * @return user model
+     * @throws java.rmi.RemoteException
      */
-    public User getUser();
+    public User getUser() throws RemoteException;
 
     /**
      * receives friendship request notification
      * @param sender_name to show name of the sender ( first and last names )
      * @param sender_email to uniquely identify user
+     * @throws java.rmi.RemoteException
      */
-    public void receiveFriendshipRequest(String sender_name, String sender_email);
+    public void receiveFriendshipRequest(String sender_name, String sender_email) throws RemoteException;
 
 }
