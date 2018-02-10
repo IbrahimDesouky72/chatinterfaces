@@ -1,5 +1,6 @@
 package com.talktoki.chatinterfaces.commans;
 
+import java.io.Serializable;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -7,7 +8,7 @@ import javafx.scene.text.Font;
  *
  * @author mahrous
  */
-public class Message {
+public class Message implements Serializable{
 
     private String text;
     private Font font;
