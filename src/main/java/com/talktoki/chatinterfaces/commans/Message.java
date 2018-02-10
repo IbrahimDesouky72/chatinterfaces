@@ -1,14 +1,12 @@
 package com.talktoki.chatinterfaces.commans;
 
 import java.io.Serializable;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 /**
  *
  * @author mahrous
  */
-public class Message implements Serializable{
+public class Message implements Serializable {
 
     private String text;
 //    private transient Font font;
@@ -16,6 +14,7 @@ public class Message implements Serializable{
 //    private boolean isBold, isItalic;
 
     public Message() {
+        text = "";
     }
 
 //    public Message(String text, Font font, Color textColor, boolean isBold, boolean isItalic) {
@@ -25,7 +24,6 @@ public class Message implements Serializable{
 //        this.isBold = isBold;
 //        this.isItalic = isItalic;
 //    }
-
     /**
      * sets message text for any message
      *
@@ -115,5 +113,4 @@ public class Message implements Serializable{
 //    public boolean isItalic() {
 //        return isItalic;
 //    }
-
 }
