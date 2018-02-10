@@ -11,8 +11,8 @@ import javafx.scene.text.Font;
 public class Message implements Serializable{
 
     private String text;
-    private Font font;
-    private Color textColor;
+    private transient Font font;
+    private transient Color textColor;
     private boolean isBold, isItalic;
 
     public Message() {
