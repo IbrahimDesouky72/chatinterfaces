@@ -19,10 +19,9 @@ public interface Message {
     /**
      * gets message text
      *
-     * @param text
      * @return message text content
      */
-    public String getText(String text);
+    public String getText();
 
     /**
      * sets font for that message
