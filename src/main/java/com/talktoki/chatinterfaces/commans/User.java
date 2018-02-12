@@ -114,6 +114,7 @@ public class User implements Serializable{
         this.gender = gender;
         this.country = country;
         this.status = status;
+        
     }
     
     
