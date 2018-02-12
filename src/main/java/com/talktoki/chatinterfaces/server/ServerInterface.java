@@ -4,6 +4,7 @@ import com.talktoki.chatinterfaces.client.*;
 import com.talktoki.chatinterfaces.commans.*;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -105,7 +106,7 @@ public interface ServerInterface extends Remote{
      * @return hash map representing contact list as [email, status] pairs
      * @throws java.rmi.RemoteException
      */
-    public HashMap<String, Integer> getContactList(String email) throws RemoteException;
+    public ArrayList<User> getContactList(String email) throws RemoteException;
 
     /**
      * asks to add a client as friend this function checks if the receiver
