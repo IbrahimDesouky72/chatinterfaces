@@ -75,7 +75,7 @@ public interface ServerInterface extends Remote{
      * @return
      * @throws java.rmi.RemoteException
      */
-    public int createGroup(String group_id, String[] group_members) throws RemoteException;
+    public int createGroup(String group_id, User[] group_members) throws RemoteException;
 
     /**
      * Send message in a group chat
