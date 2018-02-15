@@ -11,7 +11,7 @@ import javafx.scene.text.Font;
 public class Message implements Serializable {
 
     private String text;
-    private Font font;
+    private XmlFont font;
     private Color textColor;
     private boolean isBold, isItalic;
 
@@ -19,7 +19,7 @@ public class Message implements Serializable {
         text = "";
     }
 
-    public Message(String text, Font font, Color textColor, boolean isBold, boolean isItalic) {
+    public Message(String text, XmlFont font, Color textColor, boolean isBold, boolean isItalic) {
         this.text = text;
         this.font = font;
         this.textColor = textColor;
@@ -49,7 +49,7 @@ public class Message implements Serializable {
      *
      * @param font
      */
-    public void setFont(Font font) {
+    public void setFont(XmlFont font) {
         this.font = font;
     }
 
@@ -58,7 +58,7 @@ public class Message implements Serializable {
      *
      * @return
      */
-    public Font getFont() {
+    public XmlFont getFont() {
         return font;
     }
 
