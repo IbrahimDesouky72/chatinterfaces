@@ -5,11 +5,13 @@
  */
 package com.talktoki.chatinterfaces.commans;
 
+import java.io.Serializable;
+
 /**
  *
  * @author IbrahimDesouky
  */
-public class XmlFont {
+public class XmlFont implements Serializable{
     
     protected String fontSize;
     
