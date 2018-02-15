@@ -12,19 +12,18 @@ public class Message implements Serializable {
 
     private String text;
     private XmlFont font;
-    private Color textColor;
-    private boolean isBold, isItalic;
+    private String textColor;
+    
 
     public Message() {
         text = "";
     }
 
-    public Message(String text, XmlFont font, Color textColor, boolean isBold, boolean isItalic) {
+    public Message(String text, XmlFont font, String textColor) {
         this.text = text;
         this.font = font;
         this.textColor = textColor;
-        this.isBold = isBold;
-        this.isItalic = isItalic;
+        
     }
     /**
      * sets message text for any message
@@ -67,7 +66,7 @@ public class Message implements Serializable {
      *
      * @param color
      */
-    public void setTextColor(Color color) {
+    public void setTextColor(String color) {
         textColor = color;
     }
 
@@ -76,43 +75,9 @@ public class Message implements Serializable {
      *
      * @return text color
      */
-    public Color getTextColor() {
+    public String getTextColor() {
         return textColor;
     }
 
-    /**
-     * sets bold attribute
-     *
-     * @param bold
-     */
-    public void setBold(boolean bold) {
-        isBold = bold;
-    }
 
-    /**
-     * gets boold attribute
-     *
-     * @return true if message text is bold or false other wise
-     */
-    public boolean isBold() {
-        return isBold;
-    }
-
-    /**
-     * sets Italic attribute
-     *
-     * @param italic
-     */
-    public void setItalic(boolean italic) {
-        isItalic = italic;
-    }
-
-    /**
-     * gets Italic attribute
-     *
-     * @return true if message text is bold or false other wise
-     */
-    public boolean isItalic() {
-        return isItalic;
-    }
 }
