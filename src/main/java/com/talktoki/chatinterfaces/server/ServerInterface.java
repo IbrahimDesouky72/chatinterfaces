@@ -6,6 +6,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -71,13 +72,28 @@ public interface ServerInterface extends Remote{
      * Creates a group so that the server knows to whom it should send the
      * sendToGroup message
      *
-     * @param group_id
+     * @param group_id group name concatenated with '$' then data create
      * @param group_members array of emails of group members
      * @return
      * @throws java.rmi.RemoteException
      */
     public int createGroup(String group_id, ArrayList<User> group_members) throws RemoteException;
-
+    
+    /**
+     * gets array list of group ids
+     * @param user_email 
+     * @return 
+     * @throws java.rmi.RemoteException 
+     */
+    public ArrayList<String> getUserGroupsIDs( String user_email ) throws RemoteException;
+    
+    /**
+     * get users in that group
+     * @param group_id group name concatenated with ',' then data create
+     * @return 
+     */
+    public ArrayList<User> getGroupUsers( String group_id ) throws RemoteException;
+    
     /**
      * Send message in a group chat
      *
@@ -95,10 +111,9 @@ public interface ServerInterface extends Remote{
      *
      * @param email
      * @param status
-     * @return (1) Online <br> (2) Away </b> (3) Busy
      * @throws java.rmi.RemoteException
      */
-    public boolean notifyStatus(String email, int status) throws RemoteException;
+    public void notifyStatus(String email, int status) throws RemoteException;
 
     /**
      * get contact list for any user

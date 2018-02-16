@@ -55,4 +55,11 @@ public interface ClientInterface extends Remote{
      */
     public void receiveFriendshipRequest(String sender_name, String sender_email) throws RemoteException;
 
+    /**
+     * Notify a client that one of his/her friends changed their status
+     * @param friend
+     * @param status (0) offline <br> (1) Online <br> (2) Away </b> (3) Busy
+     * @throws java.rmi.RemoteException
+     */
+    public void notifyFriendStatusChanged(User friend, int status) throws RemoteException;
 }
