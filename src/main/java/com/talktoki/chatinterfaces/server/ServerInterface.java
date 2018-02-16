@@ -92,7 +92,7 @@ public interface ServerInterface extends Remote{
      * @param group_id group name concatenated with ',' then data create
      * @return 
      */
-    public ArrayList<User> getGroupUsers( String group_id );
+    public ArrayList<User> getGroupUsers( String group_id ) throws RemoteException;
     
     /**
      * Send message in a group chat
