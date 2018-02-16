@@ -83,8 +83,9 @@ public interface ServerInterface extends Remote{
      * gets array list of group ids
      * @param user_email 
      * @return 
+     * @throws java.rmi.RemoteException 
      */
-    public ArrayList<String> getUserGroupsIDs( String user_email );
+    public ArrayList<String> getUserGroupsIDs( String user_email ) throws RemoteException;
     
     /**
      * get users in that group
@@ -110,10 +111,9 @@ public interface ServerInterface extends Remote{
      *
      * @param email
      * @param status
-     * @return (0) offline <br> (1) Online <br> (2) Away </b> (3) Busy
      * @throws java.rmi.RemoteException
      */
-    public int notifyStatus(String email, int status) throws RemoteException;
+    public void notifyStatus(String email, int status) throws RemoteException;
 
     /**
      * get contact list for any user
