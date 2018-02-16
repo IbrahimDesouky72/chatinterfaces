@@ -11,20 +11,57 @@ import javafx.scene.text.Font;
 public class Message implements Serializable {
 
     private String text;
-    private Font font;
+    //private Font font;
     private String textColor;
+    private String fontFamily;
+    private String fontSize;
+    private String fontWeight;
     
+    
+    public Message(String text, String textColor, String fontFamily, String fontSize, String fontWeight) {
+        this.text = text;
+        this.textColor = textColor;
+        this.fontFamily = fontFamily;
+        this.fontSize = fontSize;
+        this.fontWeight = fontWeight;
+    }
+
+    public String getFontFamily() {
+        return fontFamily;
+    }
+
+    public void setFontFamily(String fontFamily) {
+        this.fontFamily = fontFamily;
+    }
+
+    public String getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(String fontSize) {
+        this.fontSize = fontSize;
+    }
+
+    public String getFontWeight() {
+        return fontWeight;
+    }
+
+    public void setFontWeight(String fontWeight) {
+        this.fontWeight = fontWeight;
+    }
 
     public Message() {
-        text = "";
+        fontFamily="";
+        fontSize="";
+        fontWeight="";
+        text="";
+        textColor="";
     }
+    
 
-    public Message(String text, Font font, String textColor) {
-        this.text = text;
-        this.font = font;
-        this.textColor = textColor;
-        
-    }
+   
+
+    
     /**
      * sets message text for any message
      *
@@ -43,23 +80,6 @@ public class Message implements Serializable {
         return text;
     }
 
-    /**
-     * sets font for that message
-     *
-     * @param font
-     */
-    public void setFont(Font font) {
-        this.font = font;
-    }
-
-    /**
-     * gets font of the message
-     *
-     * @return
-     */
-    public Font getFont() {
-        return font;
-    }
 
     /**
      * sets text color of a message
