@@ -7,6 +7,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 /**
  *
  * @author mahrous
@@ -75,7 +76,7 @@ public interface ServerInterface extends Remote{
      * @return
      * @throws java.rmi.RemoteException
      */
-    public int createGroup(String group_id, User[] group_members) throws RemoteException;
+    public int createGroup(String group_id, ArrayList<User> group_members) throws RemoteException;
 
     /**
      * Send message in a group chat
