@@ -6,6 +6,7 @@
 package com.talktoki.chatinterfaces.commans;
 
 import java.io.Serializable;
+import javafx.scene.text.FontWeight;
 
 /**
  *
@@ -17,7 +18,7 @@ public class XmlFont implements Serializable{
     
     protected String fontFamily;
     
-    protected String fontType;
+    protected FontWeight fontWeight;
 
     public void setFontSize(String fontSize) {
         this.fontSize = fontSize;
@@ -27,8 +28,8 @@ public class XmlFont implements Serializable{
         this.fontFamily = fontFamily;
     }
 
-    public void setFontType(String fontType) {
-        this.fontType = fontType;
+    public void setFontWeight(FontWeight fontWeight) {
+        this.fontWeight = fontWeight;
     }
 
     public String getFontSize() {
@@ -39,8 +40,8 @@ public class XmlFont implements Serializable{
         return fontFamily;
     }
 
-    public String getFontType() {
-        return fontType;
+    public FontWeight getFontType() {
+        return fontWeight;
     }
     
     
