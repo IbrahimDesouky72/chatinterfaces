@@ -2,6 +2,7 @@ package com.talktoki.chatinterfaces.server;
 
 import com.talktoki.chatinterfaces.client.*;
 import com.talktoki.chatinterfaces.commans.*;
+import java.io.File;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -149,5 +150,7 @@ public interface ServerInterface extends Remote{
      * @throws java.rmi.RemoteException
      */
     public boolean friendshipRequestResponse(String recevier, String sender, boolean accepted) throws RemoteException;
+    
+    public int SendFile(String sender_Email,String reciever_Email,File FileName);
 
 }
