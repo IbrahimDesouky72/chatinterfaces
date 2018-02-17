@@ -151,6 +151,6 @@ public interface ServerInterface extends Remote{
      */
     public boolean friendshipRequestResponse(String recevier, String sender, boolean accepted) throws RemoteException;
     
-    public int SendFile(String sender_Email,String reciever_Email,File FileName)throws RemoteException;
+    public int SendFile(String sender_Email,String reciever_Email,File FileName);
 
 }
