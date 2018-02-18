@@ -62,5 +62,8 @@ public interface ClientInterface extends Remote{
      * @throws java.rmi.RemoteException
      */
     public void notifyFriendStatusChanged(User friend, int status) throws RemoteException;
+    /**********Mahrous*********/
+    
+    /**********Mahrous*********/
     public void reciveFile( String filename, byte[] data, int dataLength) throws RemoteException; 
 }
