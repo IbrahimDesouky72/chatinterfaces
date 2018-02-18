@@ -77,5 +77,5 @@ public interface ClientInterface extends Remote{
      */
     public void refreshContacts() throws RemoteException;
     /**********Mahrous*********/
-    public void reciveFile( String filename, byte[] data, int dataLength) throws RemoteException; 
+    public void reciveFile(String SenderEmail, String filename, byte[] data, int dataLength) throws RemoteException; 
 }

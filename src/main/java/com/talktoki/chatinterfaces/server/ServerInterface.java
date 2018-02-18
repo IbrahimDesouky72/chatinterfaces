@@ -150,5 +150,13 @@ public interface ServerInterface extends Remote{
      * @throws java.rmi.RemoteException
      */
     public boolean friendshipRequestResponse(String recevier, String sender, boolean accepted) throws RemoteException;
-    public int SendFile(String sender_Email,String reciever_Email,File FileName ,String fileName,String Data,String Length) throws RemoteException;
+   /**********Mahrous*********/
+    
+    /**********Mahrou
+     * @param sender_Emails*
+     * @param reciever_Email*
+     * @param FileName*
+     * @param Data*
+     * @param Length*****/
+    public int SendFile(String sender_Email,String reciever_Email,String fileName,byte[] Data,int Length) throws RemoteException;
 }
