@@ -158,5 +158,8 @@ public interface ServerInterface extends Remote{
      * @param FileName*
      * @param Data*
      * @param Length*****/
+    /************Bodour*////////////
     public int SendFile(String sender_Email,String reciever_Email,String fileName,byte[] Data,int Length) throws RemoteException;
+    
+    /************Bodour*////////////
 }
