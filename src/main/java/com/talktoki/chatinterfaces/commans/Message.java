@@ -3,6 +3,8 @@ package com.talktoki.chatinterfaces.commans;
 import java.io.Serializable;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
@@ -10,13 +12,23 @@ import javafx.scene.text.Font;
  */
 public class Message implements Serializable {
 
-    private String text;
-    //private Font font;
-    private String textColor;
-    private String fontFamily;
-    private String fontSize;
-    private String fontWeight;
+    protected String text;
     
+    protected String date;
+    
+    protected String from;
+    
+    protected String to;
+    
+    protected String time;
+    
+    protected String fontFamily;
+    
+    protected String fontSize;
+    
+    protected String fontWeight;
+    
+    protected String textColor;
     
     public Message(String text, String textColor, String fontFamily, String fontSize, String fontWeight) {
         this.text = text;
@@ -48,6 +60,38 @@ public class Message implements Serializable {
 
     public void setFontWeight(String fontWeight) {
         this.fontWeight = fontWeight;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public String getTime() {
+        return time;
     }
 
     public Message() {
