@@ -4,6 +4,7 @@ import com.talktoki.chatinterfaces.commans.Message;
 import com.talktoki.chatinterfaces.commans.User;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 /**
  *
@@ -63,7 +64,18 @@ public interface ClientInterface extends Remote{
      */
     public void notifyFriendStatusChanged(User friend, int status) throws RemoteException;
     /**********Mahrous*********/
+    /**
+     * the server uses this function to send announcements to clients
+     * @param announcement simple text as announcement to clients
+     */
+    public void receiveServerAnnouncement(String announcement) throws RemoteException;
     
+    /**
+     * used by the server to give the user an updated contacts list 
+     * @param friends
+     * @throws RemoteException 
+     */
+    public void refreshContacts() throws RemoteException;
     /**********Mahrous*********/
     public void reciveFile( String filename, byte[] data, int dataLength) throws RemoteException; 
 }
