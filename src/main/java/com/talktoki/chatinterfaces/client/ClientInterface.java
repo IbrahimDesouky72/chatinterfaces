@@ -76,6 +76,12 @@ public interface ClientInterface extends Remote{
      * @throws RemoteException 
      */
     public void refreshContacts() throws RemoteException;
+    
+    /**
+     * Used by the server to notify all users that it is exiting
+     * @throws RemoteException 
+     */
+    public void serverExit() throws RemoteException;
     /**********Mahrous*********/
     /************Bodour*////////////
     public boolean reciveFile(String SenderEmail, String filename, byte[] data, int dataLength,boolean firstSend) throws RemoteException; 
